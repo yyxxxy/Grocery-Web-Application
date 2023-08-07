@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+
+    <style>
+        .footer .box-container{
+            display: flex;
+            gap:1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer .box-container .box{
+            padding:1rem 0;
+            flex:1 1 25rem;
+        }
+
+        .footer .box-container .box .share a{
+            padding:0;
+            height:4rem;
+            width:4rem;
+            line-height: 4rem;
+            text-align: center;
+        }
+
+        .footer .box-container .box h3{
+            font-size: 2.5rem;
+            color:var(--black);
+        }
+
+        .footer .box-container .box p{
+            font-size: 1.3rem;
+            color:#666;
+            padding:.7rem 0;
+        }
+
+        .footer .box-container .box .links{
+            padding:1rem 0;
+        }
+
+        .footer .box-container .box .links a{
+            display: block;
+            padding:.5rem 0;
+            font-size: 1.7rem;
+            color:#333;
+        }
+
+        .footer .box-container .box .links a:hover{
+            text-decoration: underline;
+        }
+
+        .footer .credit{
+            padding:2.5rem 1rem;
+            border-top: .1rem solid rgba(0,0,0,.1);
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+    </style>
+    <section class="footer">
+
+        <h1 class="credit">&copy; 2021 | My<span style="color: greenyellow">Grocery </span></h1>
+
+    </section>
+    <!--Container Main end-->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src=''></script>
+    <script type='text/javascript' src=''></script>
+    <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+
+        const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+        const toggle = document.getElementById(toggleId),
+        nav = document.getElementById(navId),
+        bodypd = document.getElementById(bodyId),
+        headerpd = document.getElementById(headerId)
+
+        // Validate that all variables exist
+        if(toggle && nav && bodypd && headerpd){
+        toggle.addEventListener('click', ()=>{
+        // show navbar
+        nav.classList.toggle('show')
+        // change icon
+        toggle.classList.toggle('bx-x')
+        // add padding to body
+        bodypd.classList.toggle('body-pd')
+        // add padding to header
+        headerpd.classList.toggle('body-pd')
+        })
+        }
+        }
+
+        showNavbar('header-toggle','nav-bar','body-pd','header')
+
+        /*===== LINK ACTIVE =====*/
+        const linkColor = document.querySelectorAll('.nav_link')
+
+        function colorLink(){
+        if(linkColor){
+        linkColor.forEach(l=> l.classList.remove('active'))
+        this.classList.add('active')
+        }
+        }
+        linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+        // Your code to run since DOM is loaded and ready
+        });</script>
+</body>
+</html>
